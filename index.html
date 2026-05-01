@@ -8,11 +8,12 @@
     <meta name="theme-color" content="#FAFAFA" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#0F1115" media="(prefers-color-scheme: dark)" />
     
-    <!-- Etiquetas específicas para iOS (Safari) -->
+    <!-- Etiquetas para PWA instalable (Android/Chrome + iOS Safari) -->
+    <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Brackets" />
-    <link rel="apple-touch-icon" href="/icon-192x192.png" />
+    <link rel="apple-touch-icon" href="/mybracketsapp/icon-192x192.png" />
     
     <!-- Enlace al Manifest -->
     <link rel="manifest" href="/mybracketsapp/manifest.json" />
@@ -31,7 +32,7 @@
         window.addEventListener('load', () => {
           // Nota: Vite-PWA o Create React App suelen generar su propio sw.js
           // Este es un registro de reserva estándar.
-          navigator.serviceWorker.register('/sw.js').then(registration => {
+          navigator.serviceWorker.register('/mybracketsapp/sw.js').then(registration => {
             console.log('SW registrado con éxito:', registration.scope);
           }).catch(err => {
             console.log('Error en registro de SW:', err);
