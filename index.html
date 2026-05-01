@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <!-- Meta tags esenciales para PWA y Responsividad -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#FAFAFA" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0F1115" media="(prefers-color-scheme: dark)" />
+    
+    <!-- Etiquetas específicas para iOS (Safari) -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Brackets" />
+    <link rel="apple-touch-icon" href="/icon-192x192.png" />
+    
+    <!-- Enlace al Manifest -->
+    <link rel="manifest" href="/mybracketsapp/manifest.json" />
+    
+    <title>Control de Brackets</title>
+    <script type="module" crossorigin src="/mybracketsapp/assets/index-B7zthRBT.js"></script>
+    <link rel="stylesheet" crossorigin href="/mybracketsapp/assets/index-L48m83m-.css">
+  </head>
+  <body>
+    <!-- Aquí es donde React montará la aplicación (tu App.jsx) -->
+    <div id="root"></div>
+    
+    <!-- Script básico para registrar un Service Worker (Necesario para que sea PWA instalable offline) -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          // Nota: Vite-PWA o Create React App suelen generar su propio sw.js
+          // Este es un registro de reserva estándar.
+          navigator.serviceWorker.register('/sw.js').then(registration => {
+            console.log('SW registrado con éxito:', registration.scope);
+          }).catch(err => {
+            console.log('Error en registro de SW:', err);
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

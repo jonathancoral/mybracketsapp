@@ -1,0 +1,30 @@
+{
+  "short_name": "Brackets",
+  "name": "Control de Brackets Autoligado",
+  "description": "Aplicación para el seguimiento mensual, pagos y accesorios de mi tratamiento de ortodoncia.",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#FAFAFA",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#FAFAFA",
+  "orientation": "portrait",
+  "categories": ["medical", "health", "personalization"]
+}
